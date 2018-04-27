@@ -49,7 +49,7 @@ spec:
             - "-retry-join=consul-1.consul.$(NAMESPACE).svc.cluster.local"
             - "-retry-join=consul-2.consul.$(NAMESPACE).svc.cluster.local"
             - "-client=0.0.0.0"
-            - "-config-file=/consul/config/server.json"
+            - "-config-file=/etc/consul-config/server.json"
             - "-datacenter=dc1"
             - "-data-dir=/consul/data"
             - "-domain=cluster.local"
@@ -61,7 +61,7 @@ spec:
             - name: data
               mountPath: /consul/data
             - name: config
-              mountPath: /consul/config
+              mountPath: /etc/consul-config
             - name: tls
               mountPath: /etc/tls
           lifecycle:
